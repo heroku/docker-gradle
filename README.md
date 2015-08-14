@@ -6,9 +6,9 @@ This image is for use with Heroku Docker CLI.
 
 Your project must contain the following files:
 
-* `gradlew` (see the [Gradle documentation for details](https://maven.apache.org/guides/index.html))
+* `gradlew` (see the [Gradle documentation for details](https://docs.gradle.org/current/userguide/wrapper_plugin.html)))
 * `gradle/wrapper/gradle-wrapper.jar` (see the [Gradle documentation for details](https://maven.apache.org/guides/index.html))
-* `build.gradle` (see the [Gradle documentation for details](https://maven.apache.org/guides/index.html))
+* `build.gradle` (see the [Gradle documentation for details](https://docs.gradle.org/current/userguide/userguide))
 * `Procfile` (see [the Heroku Dev Center for details](https://devcenter.heroku.com/articles/procfile))
 
 Then create an `app.json` file in the root directory of your application with
