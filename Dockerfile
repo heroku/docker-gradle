@@ -1,7 +1,10 @@
 # Inherit from Heroku's stack
-FROM jkutner/jvm
+FROM heroku/jvm
 
-# Run Maven to cache dependencies
+# Run Gradle to cache dependencies
+# It would be nice if we could detect the presence of gradlew, and either
+# install our own gradle, or run gradlew conditionally. But Docker doesn't
+# allow for conditional logic well.
 ONBUILD COPY ["*.gradle", "gradlew", "gradle", "/app/user/"]
 ONBUILD RUN ./gradlew dependencies
 
