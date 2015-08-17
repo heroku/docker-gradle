@@ -1,8 +1,6 @@
 # Inherit from Heroku's stack
 FROM heroku/jvm
 
-ENV PATH /app/.jdk/bin:$PATH
-
 # Run Gradle to cache dependencies
 # It would be nice if we could detect the presence of gradlew, and either
 # install our own gradle, or run gradlew conditionally. But Docker doesn't
