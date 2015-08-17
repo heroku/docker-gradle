@@ -7,7 +7,7 @@ FROM heroku/jvm
 # allow for conditional logic well.
 ONBUILD COPY ["*.gradle", "gradlew", "/app/user/"]
 ONBUILD COPY ["gradle/wrapper/*", "/app/user/gradle/wrapper/"]
-ONBUILD RUN ./gradlew build
+ONBUILD RUN ./gradlew dependencies
 
 ONBUILD COPY . /app/user/
 ONBUILD RUN ./gradlew stage
