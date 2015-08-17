@@ -5,8 +5,9 @@ FROM heroku/jvm
 # It would be nice if we could detect the presence of gradlew, and either
 # install our own gradle, or run gradlew conditionally. But Docker doesn't
 # allow for conditional logic well.
-ONBUILD COPY ["*.gradle", "gradlew", "gradle", "/app/user/"]
-ONBUILD RUN ./gradlew dependencies
+ONBUILD COPY ["*.gradle", "gradlew", "/app/user/"]
+ONBUILD COPY ["gradle/wrapper/*", "/app/user/gradle/wrapper/"]
+ONBUILD RUN ./gradlew build
 
 ONBUILD COPY . /app/user/
 ONBUILD RUN ./gradlew stage
